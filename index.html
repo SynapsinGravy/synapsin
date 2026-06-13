@@ -1,139 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synapsin Gravy Workshop</title>
-    <style>
-        :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --border: #334155;
-        }
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-        h2 {
-            font-size: 1.75rem;
-            margin-top: 2.5rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-            color: #fff;
-        }
-        h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            padding-left: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--accent);
-            margin-top: 0;
-        }
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 1.5rem;
-        }
-        .tag {
-            background-color: #0369a1;
-            color: #fff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-        footer {
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            font-style: italic;
-            color: var(--text-muted);
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synapsin Gravy Workshop — small batch software</title>
+<meta name="description" content="A tiny workshop building apps and games we want to exist, and sharing the ones we think you'll get something out of. Small batch software from Sacramento, CA.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Synapsin Gravy Workshop — small batch software">
+<meta property="og:description" content="A tiny workshop building apps and games we want to exist, and sharing the ones we think you'll get something out of.">
+<meta property="og:image" content="/assets/studio-mark.png">
+<meta property="og:url" content="https://gravyworkshop.com">
+<meta name="twitter:card" content="summary">
+<style>
+  :root {
+    --paper: #e9e3d6;
+    --card: #d6d1c8;
+    --ink: #3e2b22;
+    --muted: #7a6a5d;
+    --line: rgba(62, 43, 34, 0.16);
+    --maxw: 640px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 64px 24px 96px; }
+  a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  a:hover { border-bottom-color: var(--ink); }
+  img { display: block; }
+
+  /* hero */
+  header { text-align: center; margin-bottom: 72px; }
+  header .mark { width: 132px; height: 132px; margin: 0 auto 22px; }
+  h1 { font-size: 2rem; font-weight: 600; letter-spacing: 0.01em; margin: 0 0 6px; }
+  .tagline { font-size: 1.15rem; color: var(--muted); font-style: italic; margin: 0 0 24px; }
+  .ethos { font-size: 1.06rem; margin: 0 auto; max-width: 30em; }
+
+  /* section heading */
+  h2 {
+    font-size: 0.82rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.16em; color: var(--muted);
+    margin: 0 0 26px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+  }
+  section { margin-top: 64px; }
+
+  /* project cards */
+  .card { display: flex; gap: 22px; align-items: flex-start; margin-bottom: 34px; }
+  .card .glyph {
+    flex: 0 0 96px; width: 96px; height: 96px; border-radius: 14px;
+    background: var(--card); border: 1px solid var(--line); overflow: hidden;
+  }
+  .card .glyph img { width: 100%; height: 100%; object-fit: cover; }
+  .card .body { flex: 1; min-width: 0; }
+  .card h3 { font-size: 1.22rem; font-weight: 600; margin: 2px 0 4px; }
+  .status {
+    display: inline-block; margin-left: 8px; vertical-align: middle;
+    font-family: system-ui, sans-serif; font-style: normal;
+    font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); background: rgba(62,43,34,0.07);
+    border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px;
+  }
+  .card .lead { font-style: italic; color: var(--muted); margin: 0 0 8px; }
+  .card p.desc { margin: 0; font-size: 0.98rem; }
+
+  /* how we work */
+  ul.ethos-list { list-style: none; padding: 0; margin: 0; }
+  ul.ethos-list li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 1.02rem; }
+  ul.ethos-list li:last-child { border-bottom: none; }
+
+  /* contact */
+  .contact p { margin: 0; }
+
+  /* footer */
+  footer {
+    margin-top: 80px; padding-top: 22px; border-top: 1px solid var(--line);
+    text-align: center; color: var(--muted);
+    font-family: system-ui, sans-serif; font-size: 0.8rem; letter-spacing: 0.02em;
+  }
+  footer .fine { font-style: normal; margin-top: 8px; opacity: 0.8; }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 44px 20px 72px; }
+    h1 { font-size: 1.7rem; }
+    .card { gap: 16px; }
+    .card .glyph { flex-basis: 72px; width: 72px; height: 72px; }
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-    <header>
-        <h1>Synapsin Gravy Workshop</h1>
-        <p class="subtitle">We build practical tools.</p>
-    </header>
+  <header>
+    <img class="mark" src="/assets/studio-mark.png" alt="Synapsin Gravy Workshop — a gravy boat with a circuit-board brain" width="132" height="132">
+    <h1>Synapsin Gravy Workshop</h1>
+    <p class="tagline">small batch software</p>
+    <p class="ethos">we build the things we want to exist, and share the ones we think you'll get something out of. two hands, a few projects, no hurry.</p>
+  </header>
 
-    <main>
-        <h2>🚀 Our Tools</h2>
-        <div class="card">
-            <h3>CodeSnip Vault <span class="tag">Coming Soon</span></h3>
-            <p>Android app for managing code snippets on your phone. Because sometimes you need your code library when you only have your phone.</p>
-            <ul>
-                <li>📱 Works offline completely</li>
-                <li>🏃 Execute JavaScript/HTML/CSS on device</li>
-                <li>📤 Export to JSON, CSV, PDF, Markdown</li>
-                <li>🎯 <strong>Status:</strong> Beta testing - (<a href="mailto:hello@gravyworkshop.com">hello@gravyworkshop.com</a>)</li>
-            </ul>
-        </div>
+  <section>
+    <h2>on the workbench</h2>
 
-        <h2>💡 Our Approach</h2>
-        <ul>
-            <li><strong>Practical:</strong> If it doesn't save time, we don't build it</li>
-            <li><strong>Honest:</strong> We'll tell you what it can do and its limitations</li>
-            <li><strong>Focused:</strong> Tools that do one thing well</li>
-        </ul>
+    <div class="card">
+      <div class="glyph"><img src="/assets/appladle.png" alt="AppLadle — a ladle spooning out little app tiles" width="96" height="96" loading="lazy"></div>
+      <div class="body">
+        <h3>AppLadle <span class="status">coming soon</span></h3>
+        <p class="lead">spoon out your own little apps.</p>
+        <p class="desc">a little grid of tools and games on your phone — a calculator, notes, a couple of games — plus a bench for making your own, by hand or with a little help from AI. all offline, no account, no ads. the apps you make stay yours, as plain files you can take with you.</p>
+      </div>
+    </div>
 
-        <h2>🛠️ Tech Stack</h2>
-        <p>We use what works:</p>
-        <ul>
-            <li><strong>Mobile:</strong> Android (Kotlin/Java), Jetpack Compose</li>
-            <li><strong>AI/ML:</strong> ChromaDB, Sentence Transformers, Voyage AI</li>
-            <li><strong>Backend:</strong> Python, TypeScript, Node.js</li>
-            <li><strong>Integrations:</strong> Model Context Protocol (MCP), REST APIs</li>
-        </ul>
+    <div class="card">
+      <div class="glyph"><img src="/assets/keepfall.png" alt="Keepfall — a castle gate with units marching toward a distant keep" width="96" height="96" loading="lazy"></div>
+      <div class="body">
+        <h3>Keepfall <span class="status">in development</span></h3>
+        <p class="lead">one lane, two castles, about two minutes to take the other side.</p>
+        <p class="desc">a real-time lane-combat game where deployment order is everything and the AI plays by exactly the same rules you do — no cheating, just twelve different temperaments. fully playable now, currently drawn in honest rectangles while we make the AI good enough to beat us.</p>
+      </div>
+    </div>
 
-        <h2>📬 Connect</h2>
-        <ul>
-            <li><strong>Email:</strong> <a href="mailto:hello@gravyworkshop.com">hello@gravyworkshop.com</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/mr-matthew-pohl" target="_blank">@mr-matthew-pohl</a></li>
-            <li><strong>Blog (currently inactive):</strong> <a href="https://www.curiousintersect.blog" target="_blank">curiousintersect.blog</a></li>
-            <li><strong>Location:</strong> Sacramento, CA</li>
-        </ul>
-    </main>
+    <div class="card">
+      <div class="glyph"><img src="/assets/stockpot.png" alt="Stockpot — a simmering pot whose steam becomes a mind map" width="96" height="96" loading="lazy"></div>
+      <div class="body">
+        <h3>Stockpot <span class="status">a tool we built for ourselves</span></h3>
+        <p class="lead">where your ideas simmer and separate.</p>
+        <p class="desc">a permanent memory for one life: journals, reading, and notes go into one inbox, and overnight they're broken into small claims, linked, and grown into a personal wikipedia that gets deeper the more goes in. the memory part works; the part that runs research while we sleep is still learning.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>Building tools that work, not tools that sound impressive.</p>
-    </footer>
+  <section>
+    <h2>how we work</h2>
+    <ul class="ethos-list">
+      <li>we make what we'd want to use, and only ship what we'd actually keep.</li>
+      <li>we'll tell you what a thing does and what it doesn't. our copy has to match the code.</li>
+      <li>small on purpose. one good thing at a time.</li>
+    </ul>
+  </section>
 
+  <section class="contact">
+    <h2>say hello</h2>
+    <p><a href="mailto:hello@gravyworkshop.com">hello@gravyworkshop.com</a> — we read everything.</p>
+  </section>
+
+  <footer>
+    © 2026 Synapsin Gravy Workshop · Sacramento, CA · <a href="/privacy">privacy</a>
+    <div class="fine">small batch software</div>
+  </footer>
+
+</div>
 </body>
 </html>

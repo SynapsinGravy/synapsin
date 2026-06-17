@@ -89,6 +89,14 @@
   }
   footer .fine { font-style: normal; margin-top: 8px; opacity: 0.8; }
 
+  /* matched-pair note */
+  .pair-note {
+    margin: -14px 0 36px; padding: 12px 16px;
+    border-left: 2px solid var(--line); border-radius: 0 8px 8px 0;
+    background: rgba(62, 43, 34, 0.035);
+    color: var(--muted); font-style: italic; font-size: 0.95rem;
+  }
+
   @media (max-width: 480px) {
     .wrap { padding: 44px 20px 72px; }
     h1 { font-size: 1.7rem; }
@@ -136,6 +144,17 @@
         <p class="desc">a permanent memory for one life: journals, reading, and notes go into one inbox, and overnight they're broken into small claims, linked, and grown into a personal wikipedia that gets deeper the more goes in. the memory part works; the part that runs research while we sleep is still learning.</p>
       </div>
     </div>
+
+    <div class="card">
+      <div class="glyph"><img src="/assets/butcherblock.png" alt="Butcherblock — a butcher block where each session is chopped into even pieces" width="96" height="96" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="body">
+        <h3>Butcherblock <span class="status">in the works</span></h3>
+        <p class="lead">short-term recall for your terminal.</p>
+        <p class="desc">the fast half of the memory pair: every coding session is saved whole so you can grep it, and chopped turn-by-turn into searchable pieces so you can find a thing by meaning long after. what's worth keeping gets simmered down into Stockpot. built for people who live at the command line.</p>
+      </div>
+    </div>
+
+    <p class="pair-note">Stockpot and Butcherblock are a matched pair — Butcherblock keeps each working session within reach and reduces what matters down into Stockpot's long memory. Either stands alone; together they're a whole memory.</p>
   </section>
 
   <section>
